@@ -3,12 +3,13 @@ https://github.com/taku-o/vim-reorder-columns
 
 command format.
     :[range]ReOrder {split_pattern} {order} [{delimiter}]
+
         {split_pattern}         split line with {split_pattern}.
         {order}                 column order.
         {delimiter}             string for join column. if none, use {split_pattern} instead.
 
 command example.
-    :ReOrder , 32451 |
+    :ReOrder , 32541 |
         split line with ','
         order columns, column[3] column[2] column[4] column[5] column[1]
         join columns with delimiter '|'
@@ -20,7 +21,7 @@ command example.
                 eleven,twelve,thirteen,fourteen,fifteen
 
             command
-                :ReOrder , 32451 |
+                :ReOrder , 32541 |
 
             result
                 three|two|five|four|one
