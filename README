@@ -9,7 +9,7 @@ command format.
         {delimiter}             string for join column. if none, use {split_pattern} instead.
 
 command example.
-    :ReOrder , 32541 |
+    :%ReOrder , 32541 |
         split line with ','
         order columns, column[3] column[2] column[4] column[5] column[1]
         join columns with delimiter '|'
@@ -21,7 +21,7 @@ command example.
                 eleven,twelve,thirteen,fourteen,fifteen
 
             command
-                :ReOrder , 32541 |
+                :%ReOrder , 32541 |
 
             result
                 three|two|five|four|one
@@ -36,21 +36,21 @@ usage example.
         eleven,twelve,thirteen,fourteen,fifteen
 
     usage example 1. re order columns.
-        :ReOrder , 32451
+        :%ReOrder , 32451
 
         three,two,four,five,one
         eight,seven,nine,ten,six
         thirteen,twelve,fourteen,fifteen,eleven
 
     usage example 2. remove some columns.
-        :ReOrder , 32
+        :%ReOrder , 32
 
         three,two
         eight,seven
         thirteen,twelve
 
     usage example 3. repeat some columns.
-        :ReOrder , 3233
+        :%ReOrder , 3233
 
         three,two,three,three
         eight,seven,eight,eight
@@ -63,7 +63,7 @@ usage example.
         eleven twelve thirteen fourteen fifteen
 
     usage example 4. split with whitespace. sorry, join with whitespace is not supported.
-        :ReOrder \s\+ 32451 ,
+        :%ReOrder \s\+ 32451 ,
 
         three,two,four,five,one
         eight,seven,nine,ten,six
