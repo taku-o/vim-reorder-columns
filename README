@@ -1,0 +1,72 @@
+reorder columns.
+https://github.com/taku-o/vim-reorder-columns
+
+command format.
+    :[range]ReOrder {split_pattern} {order} [{delimiter}]
+        {split_pattern}         split line with {split_pattern}.
+        {order}                 column order.
+        {delimiter}             string for join column. if none, use {split_pattern} instead.
+
+command example.
+    :ReOrder , 32451 |
+        split line with ','
+        order columns, column[3] column[2] column[4] column[5] column[1]
+        join columns with delimiter '|'
+
+        example
+            text data.
+                one,two,three,four,five
+                six,seven,eight,nine,ten
+                eleven,twelve,thirteen,fourteen,fifteen
+
+            command
+                :ReOrder , 32451 |
+
+            result
+                three|two|five|four|one
+                eight|seven|ten|nine|six
+                thirteen|twelve|fifteen|fourteen|eleven
+
+usage example.
+    --------------------------------------------
+    example text data 1.
+        one,two,three,four,five
+        six,seven,eight,nine,ten
+        eleven,twelve,thirteen,fourteen,fifteen
+
+    usage example 1. re order columns.
+        :ReOrder , 32451
+
+        three,two,four,five,one
+        eight,seven,nine,ten,six
+        thirteen,twelve,fourteen,fifteen,eleven
+
+    usage example 2. remove some columns.
+        :ReOrder , 32
+
+        three,two
+        eight,seven
+        thirteen,twelve
+
+    usage example 3. repeat some columns.
+        :ReOrder , 3233
+
+        three,two,three,three
+        eight,seven,eight,eight
+        thirteen,twelve,thirteen,thirteen
+
+    --------------------------------------------
+    example text data 2.
+        one two three four five
+        six seven eight nine ten
+        eleven twelve thirteen fourteen fifteen
+
+    usage example 4. split with whitespace. sorry, join with whitespace is not supported.
+        :ReOrder \s\+ 32451 ,
+
+        three,two,four,five,one
+        eight,seven,nine,ten,six
+        thirteen,twelve,fourteen,fifteen,eleven
+
+
+
