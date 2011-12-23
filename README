@@ -62,12 +62,18 @@ usage example.
         six seven eight nine ten
         eleven twelve thirteen fourteen fifteen
 
-    usage example 4. split with whitespace. sorry, join with whitespace is not supported.
-        :%ReOrder \s\+ 32451 ,
+    usage example 4. split with whitespace, and join ','. '\s' is special flag.
+        :%ReOrder \s 32451 ,
 
         three,two,four,five,one
         eight,seven,nine,ten,six
         thirteen,twelve,fourteen,fifteen,eleven
 
+    usage example 5. split with whitespace, and join ' '.
+        :%ReOrder \s 32451
+
+        three two four five one
+        eight seven nine ten six
+        thirteen twelve fourteen fifteen eleven
 
 

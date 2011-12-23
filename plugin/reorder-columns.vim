@@ -17,11 +17,21 @@ function! ReOrder(...) range
     let l:firstline = a:1
     let l:lastline = a:2
 
-    let l:delimiter = a:3
-    if len(a:000) < 5
-        let l:glue = a:3
+    " special flag
+    if a:3 == '\s'
+        let l:delimiter = '\s\+'
+        if len(a:000) < 5
+            let l:glue = ' '
+        else
+            let l:glue = a:5
+        endif
     else
-        let l:glue = a:5
+        let l:delimiter = a:3
+        if len(a:000) < 5
+            let l:glue = a:3
+        else
+            let l:glue = a:5
+        endif
     endif
 
     let l:orders = split(a:4, '\zs')
